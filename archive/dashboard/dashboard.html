@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROTEIN-7 // DIGITAL TWIN OPERATIONS</title>
+<script id="embedded-state" type="application/json">{"schema":"protein-7/dashboard-state/v1","regime":"snapshot","build_ts":"2026-10-29T12:56:33Z","tick_ms":8000,"header":{"subjects":31,"purged":9,"deployments_total":15,"deployments_done":0,"deployments_pending":15,"rounds_completed":2,"top_ei":2.9288,"best_observed_dh":50.0,"rebel_top":{"batch":"BATCH_011","dev":128.1}},"landscape":{"ph_axis":[6.0,6.333333333333333,6.666666666666667,7.0,7.333333333333333,7.666666666666666,8.0,8.333333333333332,8.666666666666666,9.0],"temp_axis":[44.0,45.77777777777778,47.55555555555556,49.333333333333336,51.111111111111114,52.888888888888886,54.666666666666664,56.44444444444444,58.22222222222222,60.0],"grid":[[13.86989773871364,13.887271943532651,14.0555154501482,14.37264774036932,14.83228516259735,15.424682118220456,16.137692142417176,16.95758468695761,17.869816188983933,18.859729194872692],[13.466082111664825,13.511142581803886,13.709835254545915,14.059785470820561,14.55407221186121,15.182318698636022,15.93175243660708,16.788093642872596,17.73637592166696,18.76168754820086],[13.03507525253684,13.111676346567316,13.344985334713684,13.73215163341772,14.265613178831211,14.93429644133019,15.724744933636707,16.622101746043192,17.610969460484704,18.67619554779317],[12.575455758182365,12.687593912186014,12.959879551444383,13.388885300005466,13.966324174623576,14.680336506342158,15.516725609888356,16.460020470734214,17.494395293003116,18.60444705060422],[12.08623996131975,12.237996906428325,12.55374513709969,13.029395298858539,13.655831970419957,14.420324688596487,15.307878439558934,16.302369969164694,17.38752370032499,18.547701133334133],[11.567006616589904,11.762477575679466,12.126238325989226,12.653441631073122,13.334052326795478,14.154382727354943,15.098566069545772,16.149799686000613,17.29133008591631,18.507264570324494],[11.018053983559142,11.261267829187686,11.677551795905085,12.261237055742182,13.001276623622957,13.882930557388772,14.889398265042974,16.003133909836514,17.2069002017629,18.484527280326645],[10.440576647293462,10.735370389258463,11.208536017509847,11.853544591184711,12.658251662518367,13.60676674492835,14.681265967670207,15.86342820183136,17.135481533486335,18.480962221657],[9.836877940451114,10.186719187716122,10.720810769098389,11.431765679204943,12.306247899515478,13.327112610359025,14.4754189758176,15.73198831726057,17.078492600697924,18.49813612402604],[9.21063487490673,9.618367078322322,10.216889106925045,10.998011083379865,11.947129260975402,13.04568329444413,14.273483735053778,15.610422454329841,17.037550922226508,18.537710961610948]],"halo":{"ph":6.0,"temp":60.0,"v":18.859729194872692},"condition":{"duration":120.0,"substrate":55.0,"enzyme":"Alcalase","composition":"median, all subjects"},"nodes":[{"id":"BATCH_001","type":"subject","ph":8.0,"temp":55.0,"v":20.14295719250586,"dh":20.2,"enzyme":"Alcalase"},{"id":"BATCH_002","type":"subject","ph":2.6,"temp":37.0,"v":14.289634816722408,"dh":14.5,"enzyme":"Pepsin"},{"id":"BATCH_003","type":"subject","ph":6.4,"temp":48.0,"v":22.97886169424931,"dh":23.1,"enzyme":"Neutrase"},{"id":"BATCH_004","type":"subject","ph":7.5,"temp":58.0,"v":18.867129858084333,"dh":19.5,"enzyme":"Alcalase"},{"id":"BATCH_005","type":"subject","ph":2.6,"temp":37.0,"v":15.600160300844992,"dh":15.6,"enzyme":"Pepsin"},{"id":"BATCH_006","type":"subject","ph":6.4,"temp":48.0,"v":21.81206878750118,"dh":23.3,"enzyme":"Neutrase"},{"id":"BATCH_007","type":"subject","ph":8.0,"temp":55.0,"v":19.582635354021647,"dh":18.8,"enzyme":"Alcalase"},{"id":"BATCH_008","type":"subject","ph":8.0,"temp":55.0,"v":19.582635354021647,"dh":21.1,"enzyme":"Alcalase"},{"id":"BATCH_009","type":"subject","ph":7.5,"temp":55.0,"v":48.8480857130721,"dh":48.0,"enzyme":"Alcalase+Kojizyme"},{"id":"BATCH_010","type":"subject","ph":7.5,"temp":55.0,"v":48.82372786594493,"dh":50.0,"enzyme":"Alcalase+Kojizyme"},{"id":"BATCH_011","type":"subject","ph":8.0,"temp":55.0,"v":5.110189791194541,"dh":5.8,"enzyme":"Alcalase"},{"id":"BATCH_012","type":"subject","ph":8.0,"temp":55.0,"v":1.9475359505561192,"dh":1.58,"enzyme":"Alcalase"},{"id":"BATCH_013","type":"subject","ph":8.0,"temp":55.0,"v":0.9448315749523059,"dh":0.69,"enzyme":"Alcalase"},{"id":"BATCH_014","type":"subject","ph":8.0,"temp":60.0,"v":7.012247247022517,"dh":7.18,"enzyme":"Alcalase"},{"id":"BATCH_015","type":"subject","ph":8.0,"temp":55.0,"v":5.110189791194541,"dh":3.39,"enzyme":"Alcalase"},{"id":"BATCH_016","type":"subject","ph":8.0,"temp":55.0,"v":1.9475359505561192,"dh":1.75,"enzyme":"Alcalase"},{"id":"BATCH_017","type":"subject","ph":8.0,"temp":55.0,"v":0.9448315749523059,"dh":0.3,"enzyme":"Alcalase"},{"id":"BATCH_018","type":"subject","ph":7.4,"temp":50.0,"v":39.91445295284653,"dh":40.3,"enzyme":"Alcalase"},{"id":"BATCH_019","type":"subject","ph":7.4,"temp":50.0,"v":28.617762412942337,"dh":30.6,"enzyme":"Neutrase"},{"id":"BATCH_020","type":"subject","ph":7.4,"temp":50.0,"v":33.94873432972451,"dh":35.0,"enzyme":"Alcalase+Neutrase"},{"id":"BATCH_021","type":"subject","ph":8.0,"temp":55.0,"v":14.594436330364594,"dh":14.1,"enzyme":"Alcalase"},{"id":"BATCH_028","type":"subject","ph":8.27,"temp":56.2,"v":30.794200578870274,"dh":29.66,"enzyme":"Alcalase"},{"id":"BATCH_029","type":"subject","ph":8.27,"temp":56.2,"v":30.794200578870274,"dh":30.94,"enzyme":"Alcalase"},{"id":"BATCH_030","type":"subject","ph":8.98,"temp":64.2,"v":33.37816019830113,"dh":31.55,"enzyme":"Alcalase"},{"id":"BATCH_031","type":"subject","ph":8.98,"temp":64.2,"v":33.37816019830113,"dh":34.27,"enzyme":"Alcalase"},{"id":"BATCH_032","type":"subject","ph":7.0,"temp":55.0,"v":33.78972525037429,"dh":32.0,"enzyme":"Alcalase"},{"id":"BATCH_033","type":"subject","ph":7.0,"temp":55.0,"v":13.756868563811919,"dh":13.8,"enzyme":"Alcalase"},{"id":"BATCH_034","type":"subject","ph":7.0,"temp":50.0,"v":4.477887774243065,"dh":4.7,"enzyme":"Flavourzyme"},{"id":"BATCH_035","type":"subject","ph":7.0,"temp":52.0,"v":6.181572015184754,"dh":6.45,"enzyme":"Alcalase+Flavourzyme"},{"id":"BATCH_036","type":"subject","ph":7.0,"temp":55.0,"v":12.146749446839143,"dh":12.3,"enzyme":"Alcalase"},{"id":"BATCH_037","type":"subject","ph":7.0,"temp":50.0,"v":4.956619131858616,"dh":4.79,"enzyme":"Flavourzyme"},{"id":"CAMPAIGN_001","type":"deployment","ph":3.01,"temp":35.1,"v":7.319924514928658,"arm":"gap_fill","enzyme":"Pepsin","status":"pending"},{"id":"CAMPAIGN_002","type":"deployment","ph":6.26,"temp":52.1,"v":20.445706936770478,"arm":"gap_fill","enzyme":"Flavourzyme","status":"pending"},{"id":"CAMPAIGN_003","type":"deployment","ph":7.07,"temp":57.9,"v":51.18933266303353,"arm":"gap_fill","enzyme":"Alcalase+Kojizyme","status":"pending"},{"id":"CAMPAIGN_004","type":"deployment","ph":7.44,"temp":49.8,"v":1.5193478118532446,"arm":"gap_fill","enzyme":"Alcalase+Neutrase","status":"pending"},{"id":"CAMPAIGN_005","type":"deployment","ph":7.7,"temp":54.9,"v":30.843832844488865,"arm":"gap_fill","enzyme":"Alcalase+Neutrase","status":"pending"},{"id":"CAMPAIGN_006","type":"deployment","ph":7.07,"temp":54.6,"v":17.65743651103582,"arm":"gap_fill","enzyme":"Alcalase+Flavourzyme","status":"pending"},{"id":"CAMPAIGN_007","type":"deployment","ph":7.59,"temp":53.0,"v":9.442918233349415,"arm":"gap_fill","enzyme":"Alcalase+Flavourzyme","status":"pending"},{"id":"CAMPAIGN_008","type":"deployment","ph":7.29,"temp":57.5,"v":6.059260276977817,"arm":"process_lhc","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_009","type":"deployment","ph":8.36,"temp":53.0,"v":51.30671546636185,"arm":"process_lhc","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_010","type":"deployment","ph":9.0,"temp":59.8,"v":33.850378783375554,"arm":"process_lhc","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_011","type":"deployment","ph":7.97,"temp":55.6,"v":15.120186588950055,"arm":"process_lhc","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_012","type":"deployment","ph":7.47,"temp":51.6,"v":51.512992814263285,"arm":"process_lhc","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_013","type":"deployment","ph":8.05,"temp":57.0,"v":6.287726796333898,"arm":"dose_sweep","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_014","type":"deployment","ph":8.29,"temp":55.5,"v":5.307584097095685,"arm":"dose_sweep","enzyme":"Alcalase","status":"pending"},{"id":"CAMPAIGN_015","type":"deployment","ph":8.49,"temp":53.9,"v":4.384497644689561,"arm":"dose_sweep","enzyme":"Alcalase","status":"pending"},{"id":"S1R1","type":"scout","ph":7.072226272300336,"temp":47.44128854076654,"v":19.447066645573276,"ei":2.9288,"expected":13.2,"round":1,"rank":1},{"id":"S1R2","type":"scout","ph":8.02279850606252,"temp":52.00590958041877,"v":12.851944270633172,"ei":2.7621,"expected":54.4,"round":1,"rank":2},{"id":"S1R3","type":"scout","ph":8.0352425059535,"temp":57.56594953597065,"v":19.84860146971115,"ei":2.679,"expected":13.2,"round":1,"rank":3},{"id":"S2R1","type":"scout","ph":7.790838066211832,"temp":53.84923043585016,"v":14.69254398651213,"ei":2.7455,"expected":54.4,"round":2,"rank":1},{"id":"S2R2","type":"scout","ph":8.56046813300992,"temp":52.50668666826125,"v":10.417573093417857,"ei":2.7263,"expected":53.9,"round":2,"rank":2},{"id":"S2R3","type":"scout","ph":7.808505122354976,"temp":55.04540574975178,"v":14.04031924168048,"ei":2.7237,"expected":54.4,"round":2,"rank":3}]},"network":{"nodes":[{"id":"pH","label":"pH","value":100.0},{"id":"T","label":"T","value":100.0},{"id":"DUR","label":"DUR","value":100.0},{"id":"E/S","label":"E/S","value":0.0},{"id":"SUB","label":"SUB","value":100.0},{"id":"DH","label":"DH","value":100.0},{"id":"ORAC","label":"ORAC","value":100.0}],"edges":[{"s":"pH","t":"T","r":0.911,"agree":true},{"s":"DUR","t":"DH","r":0.735,"agree":true},{"s":"T","t":"ORAC","r":0.53,"agree":true},{"s":"SUB","t":"DH","r":-0.476,"agree":null},{"s":"pH","t":"ORAC","r":0.467,"agree":true},{"s":"SUB","t":"ORAC","r":-0.391,"agree":null},{"s":"DH","t":"ORAC","r":0.387,"agree":null},{"s":"DUR","t":"SUB","r":-0.227,"agree":false},{"s":"DUR","t":"ORAC","r":0.22,"agree":true}],"note":"E/S constant (0.02) in n=31 - zero variance, 6 edge(s) withheld \u00b7 data corr vs ODE sensitivity, n = 31 \u00b7 |r| \u2265 0.20"},"kinetics":{"batches":[{"id":"BATCH_001","enzyme":"Alcalase","final":20.2,"measured":[[0.0,0.0],[20.0,8.5],[40.0,13.2],[60.0,16.5],[80.0,18.2],[100.0,19.3],[120.0,20.2]],"predicted":[[0.0,0.0],[2.0338983050847457,0.6740403416171417],[4.067796610169491,1.3271800767628836],[6.101694915254237,1.960171041118625],[8.135593220338983,2.573733133497827],[10.169491525423728,3.1685545781235023],[12.203389830508474,3.7452957754765452],[14.23728813559322,4.304589246451412],[16.271186440677965,4.847041303950397],[18.305084745762713,5.3732336002938625],[20.338983050847457,5.883723563762542],[22.3728813559322,6.379045528246355],[24.406779661016948,6.859713095479548],[26.440677966101696,7.326220520355582],[28.47457627118644,7.779041238348078],[30.508474576271183,8.218629919206546],[32.54237288135593,8.645424040553689],[34.57627118644068,9.059843715808615],[36.610169491525426,9.462293282443605],[38.644067796610166,9.853161429786251],[40.67796610169491,10.232822216314617],[42.71186440677966,10.601635697131977],[44.7457627118644,10.959948294411104],[46.77966101694915,11.308093808465754],[48.813559322033896,11.646393602963112],[50.847457627118644,11.975157271299238],[52.88135593220339,12.294683190962028],[54.91525423728813,12.605258988097718],[56.94915254237288,12.907161872504592],[58.983050847457626,13.20065928955891],[61.01694915254237,13.486009159362968],[63.050847457627114,13.763460322108962],[65.08474576271186,14.03325294958105],[67.11864406779661,14.295618838360689],[69.15254237288136,14.55078179391598],[71.1864406779661,14.798957927272747],[73.22033898305085,15.040355977488835],[75.25423728813558,15.275177604499042],[77.28813559322033,15.50361765840592],[79.32203389830508,15.725864464942807],[81.35593220338983,15.94210006153393],[83.38983050847457,16.152500453897478],[85.42372881355932,16.357235844232218],[87.45762711864407,16.55647084817571],[89.4915254237288,16.750364719085137],[91.52542372881355,16.93907153647402],[93.5593220338983,17.122740411300587],[95.59322033898304,17.301515665796305],[97.62711864406779,17.47553700935854],[99.66101694915254,17.644939715801186],[101.69491525423729,17.809854775456035],[103.72881355932203,17.970409060109965],[105.76271186440678,18.126725466177266],[107.79661016949152,18.27892305813777],[109.83050847457626,18.427117209463976],[111.86440677966101,18.571419726640244],[113.89830508474576,18.711938982227842],[115.9322033898305,18.848780029981118],[117.96610169491525,18.982044721825183],[120.0,19.11183182181135]],"rmse":2.28,"flag":false},{"id":"BATCH_004","enzyme":"Alcalase","final":19.5,"measured":[[0.0,0.0],[20.0,8.2],[40.0,13.0],[60.0,16.0],[80.0,17.8],[100.0,18.8],[120.0,19.5]],"predicted":[[0.0,0.0],[2.0338983050847457,0.7311021187948257],[4.067796610169491,1.4352824104107758],[6.101694915254237,2.1136789863770296],[8.135593220338983,2.7673721492610723],[10.169491525423728,3.397389285944053],[12.203389830508474,4.004707632386145],[14.23728813559322,4.590256917378807],[16.271186440677965,5.154922639997762],[18.305084745762713,5.699546771552082],[20.338983050847457,6.224931254801852],[22.3728813559322,6.731842190938936],[24.406779661016948,7.221011095256445],[26.440677966101696,7.69313292731645],[28.47457627118644,8.148872590338476],[30.508474576271183,8.588864219622554],[32.54237288135593,9.01371389828783],[34.57627118644068,9.424000571871298],[36.610169491525426,9.82027765426559],[38.644067796610166,10.203074474372709],[40.67796610169491,10.572897090954967],[42.71186440677966,10.930230106720002],[44.7457627118644,11.275537097595215],[46.77966101694915,11.609262078892762],[48.813559322033896,11.931830422778825],[50.847457627118644,12.243649614867422],[52.88135593220339,12.545110072066882],[54.91525423728813,12.836586446927257],[56.94915254237288,13.11843784568715],[58.983050847457626,13.391008851661429],[61.01694915254237,13.65463015363671],[63.050847457627114,13.909619140487477],[65.08474576271186,14.156280597619135],[67.11864406779661,14.394907216333152],[69.15254237288136,14.625780203185112],[71.1864406779661,14.849169771128137],[73.22033898305085,15.065335634122063],[75.25423728813558,15.274527503370011],[77.28813559322033,15.476985489582125],[79.32203389830508,15.672940565807684],[81.35593220338983,15.862614939227518],[83.38983050847457,16.046222438774382],[85.42372881355932,16.223968888241156],[87.45762711864407,16.396052423104713],[89.4915254237288,16.56266384561315],[91.52542372881355,16.723986910880228],[93.5593220338983,16.88019863237059],[95.59322033898304,17.03146956566908],[97.62711864406779,17.177964060551748],[99.66101694915254,17.31984053551084],[101.69491525423729,17.457251701010644],[103.72881355932203,17.590344801471844],[105.76271186440678,17.719261833941204],[107.79661016949152,17.844139750050424],[109.83050847457626,17.96511066996106],[111.86440677966101,18.08230205886868],[113.89830508474576,18.19583691965508],[115.9322033898305,18.305833963478104],[117.96610169491525,18.412407771684574],[120.0,18.51566896488132]],"rmse":1.86,"flag":false},{"id":"BATCH_009","enzyme":"Alcalase+Kojizyme","final":48.0,"measured":[[0.0,0.0],[20.0,8.5],[40.0,13.2],[60.0,16.5],[80.0,18.2],[100.0,19.3],[120.0,20.2],[140.0,25.0],[160.0,30.5],[180.0,35.2],[200.0,39.0],[220.0,42.5],[240.0,45.0],[260.0,46.8],[300.0,48.0]],"predicted":null,"rmse":null,"flag":false},{"id":"BATCH_011","enzyme":"Alcalase","final":5.8,"measured":[[0.0,0.0],[20.0,2.8],[40.0,4.5],[60.0,5.8]],"predicted":[[0.0,0.0],[1.0169491525423728,0.30966793217948874],[2.0338983050847457,0.6145756916476843],[3.0508474576271185,0.9148077464470233],[4.067796610169491,1.2104468383587972],[5.084745762711864,1.5015741110723515],[6.101694915254237,1.788268973056383],[7.11864406779661,2.0706092384918104],[8.135593220338983,2.348670831339785],[9.152542372881356,2.622527990723635],[10.169491525423728,2.8922539416553925],[11.1864406779661,3.1579200958043594],[12.203389830508474,3.4195964692888468],[13.220338983050848,3.6773516754298985],[14.23728813559322,3.931252816842503],[15.254237288135592,4.181365783027495],[16.271186440677965,4.427755041388333],[17.28813559322034,4.670483781316216],[18.305084745762713,4.909614048582643],[19.322033898305083,5.145206484236533],[20.338983050847457,5.377320493433493],[21.35593220338983,5.606014292769328],[22.3728813559322,5.831344984106333],[23.389830508474574,6.053368607038003],[24.406779661016948,6.272140140309913],[25.423728813559322,6.487713569555864],[26.440677966101696,6.700141933640826],[27.457627118644066,6.909476994263293],[28.47457627118644,7.115769344027177],[29.491525423728813,7.319068813671238],[30.508474576271183,7.5194242983089365],[31.525423728813557,7.7168837843866225],[32.54237288135593,7.911494269190018],[33.559322033898304,8.10330183848177],[34.57627118644068,8.292351757602669],[35.59322033898305,8.478688451401096],[36.610169491525426,8.662355525677095],[37.62711864406779,8.84339571746144],[38.644067796610166,9.021850967413268],[39.66101694915254,9.197762466265132],[40.67796610169491,9.37117065285547],[41.69491525423729,9.542115231322688],[42.71186440677966,9.710635125215493],[43.728813559322035,9.876768553819902],[44.7457627118644,10.04055306024856],[45.762711864406775,10.202025513580438],[46.77966101694915,10.361222123020482],[47.79661016949152,10.518178406851654],[48.813559322033896,10.672929250589952],[49.83050847457627,10.825508920716414],[50.847457627118644,10.975951068250431],[51.86440677966102,11.12428874196969],[52.88135593220339,11.270554417437266],[53.89830508474576,11.41477998810544],[54.91525423728813,11.556996777445304],[55.932203389830505,11.697235550672085],[56.94915254237288,11.835526527629785],[57.96610169491525,11.971899420687015],[58.983050847457626,12.10638342263893],[60.0,12.239007222680717]],"rmse":4.19,"flag":true},{"id":"BATCH_033","enzyme":"Alcalase","final":13.8,"measured":[[0.0,0.0],[20.0,4.5],[40.0,8.0],[60.0,10.5],[80.0,12.0],[100.0,13.0],[120.0,13.8]],"predicted":[[0.0,0.0],[2.0338983050847457,0.6119035026885244],[4.067796610169491,1.205199538932014],[6.101694915254237,1.7805394747107768],[8.135593220338983,2.3385480591160217],[10.169491525423728,2.8798230683495927],[12.203389830508474,3.4049390830873896],[14.23728813559322,3.914447098128385],[16.271186440677965,4.408875933687506],[18.305084745762713,4.888733422215496],[20.338983050847457,5.354507266241958],[22.3728813559322,5.806665284817329],[24.406779661016948,6.2456574563902585],[26.440677966101696,6.671917236792041],[28.47457627118644,7.085861138851984],[30.508474576271183,7.487888815573929],[32.54237288135593,7.878385540173011],[34.57627118644068,8.257721713945962],[36.610169491525426,8.626254104898582],[38.644067796610166,8.984326190166326],[40.67796610169491,9.332268721362038],[42.71186440677966,9.670400496277166],[44.7457627118644,9.999028524111022],[46.77966101694915,10.31844888042319],[48.813559322033896,10.628946974896085],[50.847457627118644,10.930797977025632],[52.88135593220339,11.224267334351088],[54.91525423728813,11.509611190566766],[56.94915254237288,11.787076647349942],[58.983050847457626,12.05690226984586],[61.01694915254237,12.31931838406232],[63.050847457627114,12.574547363842976],[65.08474576271186,12.822804035882008],[67.11864406779661,13.064295908145267],[69.15254237288136,13.2992234940564],[71.1864406779661,13.527780576792319],[73.22033898305085,13.750154470642805],[75.25423728813558,13.966526283403196],[77.28813559322033,14.177071139165],[79.32203389830508,14.381958422840011],[81.35593220338983,14.581351988197705],[83.38983050847457,14.775410369119973],[85.42372881355932,14.964286984968433],[87.45762711864407,15.148130320630838],[89.4915254237288,15.32708412123638],[91.52542372881355,15.501287557538246],[93.5593220338983,15.670875397256212],[95.59322033898304,15.835978167234579],[97.62711864406779,15.996722300229376],[99.66101694915254,16.15323029067988],[101.69491525423729,16.305620827590854],[103.72881355932203,16.454008934087174],[105.76271186440678,16.598506096653953],[107.79661016949152,16.739220385502964],[109.83050847457626,16.87625657992245],[111.86440677966101,17.009716276085623],[113.89830508474576,17.139698001172622],[115.9322033898305,17.266297317302715],[117.96610169491525,17.38960692034648],[120.0,17.509716741790932]],"rmse":2.23,"flag":false},{"id":"BATCH_034","enzyme":"Flavourzyme","final":4.7,"measured":[[0.0,0.0],[20.0,1.8],[40.0,3.0],[60.0,3.8],[80.0,4.2],[100.0,4.5],[120.0,4.7]],"predicted":null,"rmse":null,"flag":false},{"id":"BATCH_036","enzyme":"Alcalase","final":12.3,"measured":[[0.0,0.0],[20.0,4.2],[40.0,7.5],[60.0,9.8],[80.0,11.0],[100.0,11.8],[120.0,12.3]],"predicted":[[0.0,0.0],[2.0338983050847457,0.5664074246974957],[4.067796610169491,1.115839216879885],[6.101694915254237,1.6488774293584525],[8.135593220338983,2.166081037822994],[10.169491525423728,2.667985322295542],[12.203389830508474,3.155105307843726],[14.23728813559322,3.627935420833003],[16.271186440677965,4.08695059562444],[18.305084745762713,4.532607329288695],[20.338983050847457,4.965344606919373],[22.3728813559322,5.3855838786839865],[24.406779661016948,5.79373066972705],[26.440677966101696,6.1901758336515424],[28.47457627118644,6.57529587391128],[30.508474576271183,6.949451938265161],[32.54237288135593,7.312992507964322],[34.57627118644068,7.666253022303016],[36.610169491525426,8.009556690945937],[38.644067796610166,8.34321506487977],[40.67796610169491,8.667528293934232],[42.71186440677966,8.982785936926566],[44.7457627118644,9.289267094407137],[46.77966101694915,9.587241053509377],[48.813559322033896,9.876967670848279],[50.847457627118644,10.158697618806631],[52.88135593220339,10.432672891215649],[54.91525423728813,10.699127161722252],[56.94915254237288,10.958286035011954],[58.983050847457626,11.210367421531874],[61.01694915254237,11.45558188751748],[63.050847457627114,11.694132844363285],[65.08474576271186,11.926216921398877],[67.11864406779661,12.152024178515196],[69.15254237288136,12.371738374213106],[71.1864406779661,12.585537212122318],[73.22033898305085,12.793592562131819],[75.25423728813558,12.996070696743516],[77.28813559322033,13.193132488420266],[79.32203389830508,13.38493362115195],[81.35593220338983,13.571624781808115],[83.38983050847457,13.753351840358846],[85.42372881355932,13.930256036943334],[87.45762711864407,14.102474140311546],[89.4915254237288,14.270138618568083],[91.52542372881355,14.433377791106926],[93.5593220338983,14.592315975640627],[95.59322033898304,14.747073637393552],[97.62711864406779,14.897767517657703],[99.66101694915254,15.04451077211915],[101.69491525423729,15.187413092659774],[103.72881355932203,15.326580828012197],[105.76271186440678,15.462117103426325],[107.79661016949152,15.594121925973687],[109.83050847457626,15.722692297064288],[111.86440677966101,15.847922310993912],[113.89830508474576,15.96990325449456],[115.9322033898305,16.088723703237786],[117.96610169491525,16.204469608640842],[120.0,16.317224389509178]],"rmse":2.29,"flag":false}],"note":"measured = lab time-course; dashed = fitted ODE at each batch's recorded T/pH"},"confidence":[{"model":"ODE FIT","metric":"Alcalase kinetics R\u00b2","value":0.844,"status":"ok","note":"dh_curve vs time-course, n=32 pts"},{"model":"EBM ENERGYNET","metric":"top EI \u00b7 2 rounds","value":2.9288,"status":"ok","note":"expectation-improvement acquisition, round 2 closed"},{"model":"ORAC RIDGE","metric":"LOO R\u00b2 = 0.507 \u00b7 MAE 28.34","value":0.507,"status":"ok","note":"\u03b1 = 10.0, leave-one-out audit"},{"model":"PRIOR ARMS","metric":"rule-based, \u03c3 = 4.0 DH pts","value":null,"status":"warn","note":"non-Alcalase deployments rely on prior mean + log-duration add"}],"alerts":[{"level":"crit","source":"KINETICS","ts":"2026-10-29T12:56:33Z","msg":"BATCH_011 hydrolysis curve unfit \u2014 RMSE 4.19 pts vs fitted ODE; flagged, not silently trusted"},{"level":"warn","source":"BIOACTIVITY","ts":"2026-10-29T12:56:33Z","msg":"9 rebel cells vetted from registry \u2014 ORAC LOO residual > 30; top BATCH_011 at 128.1 umol TE/g"},{"level":"warn","source":"IDENTIFIABILITY","ts":"2026-10-29T12:56:33Z","msg":"E/S held constant in 5 batch-1 runs \u2014 dose effect weakly identified; campaign dose sweep in progress"},{"level":"info","source":"ACQUISITION","ts":"2026-10-29T12:56:33Z","msg":"Round 2 closed \u2014 3 scouts deployed, top EI 2.9288, best observed 50.0%"},{"level":"info","source":"CAMPAIGN","ts":"2026-10-29T12:56:33Z","msg":"15 deployments queued \u2014 dose_sweep / process_lhc / gap_fill arms"},{"level":"info","source":"ETHOS","ts":"2026-10-29T12:56:33Z","msg":"No rebel exceeds best observed 50.0% \u2014 honest status, no theatre"}],"roster":[{"id":"CAMPAIGN_001","arm":"gap_fill","enzyme":"Pepsin","ph":3.01,"temp":35.1,"duration":210.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_002","arm":"gap_fill","enzyme":"Flavourzyme","ph":6.26,"temp":52.1,"duration":275.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_003","arm":"gap_fill","enzyme":"Alcalase+Kojizyme","ph":7.07,"temp":57.9,"duration":246.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_004","arm":"gap_fill","enzyme":"Alcalase+Neutrase","ph":7.44,"temp":49.8,"duration":114.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_005","arm":"gap_fill","enzyme":"Alcalase+Neutrase","ph":7.7,"temp":54.9,"duration":132.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_006","arm":"gap_fill","enzyme":"Alcalase+Flavourzyme","ph":7.07,"temp":54.6,"duration":269.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_007","arm":"gap_fill","enzyme":"Alcalase+Flavourzyme","ph":7.59,"temp":53.0,"duration":61.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_008","arm":"process_lhc","enzyme":"Alcalase","ph":7.29,"temp":57.5,"duration":179.0,"substrate":61.88277715008185,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_009","arm":"process_lhc","enzyme":"Alcalase","ph":8.36,"temp":53.0,"duration":257.0,"substrate":48.71739811374883,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_010","arm":"process_lhc","enzyme":"Alcalase","ph":9.0,"temp":59.8,"duration":255.0,"substrate":41.13702448403093,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_011","arm":"process_lhc","enzyme":"Alcalase","ph":7.97,"temp":55.6,"duration":132.0,"substrate":40.19478350616498,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_012","arm":"process_lhc","enzyme":"Alcalase","ph":7.47,"temp":51.6,"duration":297.0,"substrate":50.18193035831813,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_013","arm":"dose_sweep","enzyme":"Alcalase","ph":8.05,"temp":57.0,"duration":120.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_014","arm":"dose_sweep","enzyme":"Alcalase","ph":8.29,"temp":55.5,"duration":120.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null},{"id":"CAMPAIGN_015","arm":"dose_sweep","enzyme":"Alcalase","ph":8.49,"temp":53.9,"duration":120.0,"substrate":50.0,"status":"pending","measured_dh":null,"expected_dh":null}]}</script>
+<style>
+:root{
+  --bg:#0A0D13; --panel:#0F131C; --panel2:#121724; --hair:#1B2230; --edge:#232C3E;
+  --txt:#C9D1D9; --dim:#7A8499; --mut:#55607A;
+  --blue:#58A6FF; --teal:#39C5CF; --green:#3FB950; --amber:#D29922; --red:#F85149; --purple:#BC8CFF;
+  --mono:"Cascadia Mono","SF Mono",Consolas,monospace;
+  --sans:-apple-system,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:13px}
+body{min-width:1280px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.blink{animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(63,185,80,.45)}50%{box-shadow:0 0 0 7px rgba(63,185,80,0)}}
+
+/* ---------- header ---------- */
+header{display:flex;align-items:flex-end;justify-content:space-between;height:76px;padding:0 28px;
+  border-bottom:1px solid var(--edge);background:linear-gradient(180deg,#0D1120 0%,var(--bg) 100%)}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .sigil{width:34px;height:34px;border:1px solid var(--blue);position:relative;
+  background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(88,166,255,.08) 6px 7px)}
+.brand .sigil::before{content:"";position:absolute;inset:6px;border:1px solid rgba(88,166,255,.5)}
+.brand h1{font-size:17px;letter-spacing:.14em;font-weight:600;color:#E6EBF4}
+.brand h1 em{font-style:normal;color:var(--blue)}
+.brand .sub{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;margin-top:4px}
+.clock{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.05em}
+.chips{display:flex;align-items:center;gap:10px}
+.chip{display:flex;align-items:baseline;gap:8px;padding:6px 12px;border:1px solid var(--hair);
+  background:var(--panel);min-width:118px}
+.chip .k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--dim)}
+.chip .v{font-size:15px;font-weight:600;color:#E6EBF4}
+.chip .v.acc{color:var(--blue)} .chip .v.warn{color:var(--amber)} .chip .v.reb{color:var(--red)}
+.chip .dot{width:7px;height:7px;border-radius:50%;align-self:center}
+.dot.green{background:var(--green)} .dot.amber{background:var(--amber)} .dot.red{background:var(--red)} .dot.blue{background:var(--blue)}
+.regime{padding:7px 14px;border:1px solid var(--blue);color:var(--blue);font-family:var(--mono);
+  font-size:10px;letter-spacing:.16em;background:rgba(88,166,255,.06);white-space:nowrap}
+.regime.snap{border-color:var(--dim);color:var(--dim);background:transparent}
+
+/* ---------- shell ---------- */
+main{padding:18px 22px 8px;display:grid;gap:14px}
+.grid1{display:grid;grid-template-columns:7fr 5fr;gap:14px}
+.grid2{display:grid;grid-template-columns:4fr 3fr 5fr;gap:14px}
+.panel{background:var(--panel);border:1px solid var(--hair);position:relative;min-height:0}
+.panel::before,.panel::after{content:"";position:absolute;width:9px;height:9px;pointer-events:none}
+.panel::before{top:-1px;left:-1px;border-top:1px solid var(--blue);border-left:1px solid var(--blue)}
+.panel::after{bottom:-1px;right:-1px;border-bottom:1px solid var(--blue);border-right:1px solid var(--blue)}
+.phead{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;border-bottom:1px solid var(--hair)}
+.phead h2{font-size:10px;letter-spacing:.18em;color:var(--dim);font-weight:600}
+.phead h2 b{color:#E6EBF4;font-weight:600}
+.phead .led{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal)}
+.phead .meta{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--mut);letter-spacing:.1em}
+.pbody{position:relative;height:340px}
+.pbody.tall{height:396px}
+
+/* ---------- landscape ---------- */
+#landscape{position:absolute;inset:0;width:100%;height:100%;display:block;background:var(--panel)}
+.scan{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.scan::after{content:"";position:absolute;left:-20%;right:-20%;height:60px;top:-80px;
+  background:linear-gradient(180deg,transparent,rgba(88,166,255,.05),transparent);
+  animation:sweep 9s linear infinite}
+@keyframes sweep{0%{top:-90px}100%{top:110%}}
+.legend{position:absolute;right:14px;bottom:12px;display:flex;flex-direction:column;gap:5px;
+  font-family:var(--mono);font-size:9px;color:var(--dim);z-index:2}
+.legend .row{display:flex;align-items:center;gap:7px}
+.legend .sw{width:20px;height:7px}
+.footnote{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;
+  color:var(--mut);letter-spacing:.06em;z-index:2}
+
+/* ---------- network ---------- */
+#network{position:absolute;inset:0;width:100%;height:100%}
+.net-label{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--dim)}
+.net-val{font-family:var(--mono);font-size:10px;fill:var(--blue)}
+
+/* ---------- kinetics ---------- */
+#kinetics{position:absolute;inset:0;overflow-y:auto;padding:10px 14px}
+.krow{display:grid;grid-template-columns:96px 1fr 118px;gap:10px;align-items:center;
+  padding:7px 0;border-bottom:1px solid rgba(27,34,48,.55)}
+.krow:last-child{border-bottom:none}
+.kid{font-family:var(--mono);font-size:11px;color:#E6EBF4}
+.kid .enz{display:block;font-size:8.5px;color:var(--mut);letter-spacing:.06em;margin-top:2px}
+.kcanv{height:56px;position:relative}
+.kcanv canvas{position:absolute;inset:0;width:100%;height:100%}
+.kstats{font-family:var(--mono);font-size:10px;color:var(--dim);line-height:1.5}
+.kstats .flag{color:var(--amber)} .kstats .ok{color:var(--blue)}
+
+/* ---------- confidence ---------- */
+#conf{position:absolute;inset:0;overflow-y:auto;padding:12px 16px}
+.crow{margin-bottom:18px}
+.crow .top{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.crow .cd{width:6px;height:6px;border-radius:50%;align-self:center}
+.cd.ok{background:var(--blue);box-shadow:0 0 5px var(--blue)} .cd.warn{background:var(--amber);box-shadow:0 0 5px var(--amber)}
+.crow .name{font-size:11px;font-weight:600;color:#E6EBF4;letter-spacing:.05em}
+.crow .met{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dim)}
+.track{height:7px;background:#0A0E17;border:1px solid var(--hair);position:relative}
+.track .fill{position:absolute;inset:0;transform-origin:left}
+.fill.blue{background:linear-gradient(90deg,rgba(88,166,255,.25),var(--blue))}
+.fill.warn{background:linear-gradient(90deg,rgba(210,153,34,.25),var(--amber))}
+.crow .note{margin-top:5px;font-family:var(--mono);font-size:9px;color:var(--mut);letter-spacing:.04em}
+
+/* ---------- alerts ---------- */
+#alerts{position:absolute;inset:0;overflow-y:auto;padding:8px 14px}
+.alert{display:grid;grid-template-columns:10px 66px 1fr auto;gap:10px;align-items:baseline;
+  padding:8px 0;border-bottom:1px solid rgba(27,34,48,.55)}
+.alert:last-child{border-bottom:none}
+.alert .lvl{width:6px;height:6px;border-radius:50%;align-self:center}
+.lvl.crit{background:var(--red);box-shadow:0 0 6px var(--red)}
+.lvl.warn{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.lvl.info{background:var(--green);box-shadow:0 0 6px rgba(63,185,80,.5)}
+.alert .src{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--dim)}
+.alert .msg{font-size:12px;color:var(--txt);line-height:1.35}
+.alert .ts{font-family:var(--mono);font-size:9px;color:var(--mut)}
+
+/* ---------- roster strip ---------- */
+footer{border-top:1px solid var(--edge);margin-top:2px;padding:12px 22px 20px}
+.foot-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.foot-head h2{font-size:10px;letter-spacing:.18em;color:var(--dim);font-weight:600}
+.foot-head .meta{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--mut)}
+.roster{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.rcell{background:var(--panel2);border:1px solid var(--hair);border-left:3px solid var(--hair);
+  padding:7px 9px;position:relative}
+.rcell.arm-dose{border-left-color:var(--blue)}
+.rcell.arm-lhc{border-left-color:var(--teal)}
+.rcell.arm-gap{border-left-color:var(--purple)}
+.rcell.done{opacity:.85}
+.rcell .rid{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.06em}
+.rcell .rstat{position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%}
+.rstat.pend{background:var(--mut)} .rstat.run{background:var(--amber);animation:blink 1s infinite}
+.rstat.done{background:var(--green)}
+.rcell .rdh{font-family:var(--mono);font-size:15px;font-weight:600;margin-top:3px;color:#E6EBF4}
+.rcell .rdh small{font-size:9px;color:var(--mut);font-weight:400}
+.rcell .rcond{font-family:var(--mono);font-size:8.5px;color:var(--mut);margin-top:3px}
+.rcell .rarm{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--dim);margin-top:2px}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:#232C3E} ::-webkit-scrollbar-track{background:transparent}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="sigil"></div>
+    <div>
+      <h1>PROTEIN-7 <em>DIGITAL TWIN</em> // OPERATIONS</h1>
+      <div class="sub">ENZYMATIC HYDROLYSIS · ENERGY-BASED OPTIMISATION · <span id="hd-regime">UNKNOWN</span></div>
+    </div>
+  </div>
+  <div class="chips">
+    <div class="chip"><span class="dot green pulse" id="hd-dot"></span><span class="k">SUBJECTS SYNCED</span><span class="v" id="hd-subjects">--</span></div>
+    <div class="chip"><span class="k">DEPLOYMENTS</span><span class="v" id="hd-dep">--/--</span></div>
+    <div class="chip"><span class="k">REBEL CELLS</span><span class="v reb" id="hd-rebel">--</span></div>
+    <div class="chip"><span class="k">BEST OBSERVED</span><span class="v acc" id="hd-best">--</span></div>
+    <div class="chip"><span class="k">ROUNDS</span><span class="v" id="hd-rounds">--</span></div>
+    <div class="regime" id="hd-chip">SNAPSHOT</div>
+    <div class="clock" id="hd-clock">--:--:-- UTC</div>
+  </div>
+</header>
+
+<main>
+  <div class="grid1">
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>ACQUISITION LANDSCAPE — <b>EXPECTED DH</b> UNDER ENERGYNET</h2>
+        <span class="meta" id="ls-cond">CONDITIONING…</span></div>
+      <div class="pbody tall">
+        <canvas id="landscape"></canvas>
+        <div class="scan"></div>
+        <div class="footnote" id="ls-note">MODEL BELIEF SURFACE — NOT MEASURED DATA</div>
+        <div class="legend" id="ls-legend"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>VARIABLE CORRELATION — <b>DATA VS ODE SENSITIVITY</b></h2>
+        <span class="meta" id="nt-meta">n = 31 · |r| ≥ 0.20</span></div>
+      <div class="pbody">
+        <svg id="network" viewBox="0 0 480 340" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid2">
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>HYDROLYSIS KINETICS — <b>TIME-COURSE</b></h2>
+        <span class="meta" id="kt-note">MEASURED / ODE PREDICTED</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="kinetics"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>MODEL CONFIDENCE</h2>
+        <span class="meta">PER-SOURCE</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="conf"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>ALERT QUEUE</h2>
+        <span class="meta" id="al-count">0 ENTRIES</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="alerts"></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-head"><h2>DEPLOYMENT ROSTER — CAMPAIGN-1</h2>
+    <span class="meta" id="ro-meta">--</span></div>
+  <div class="roster" id="roster"></div>
+</footer>
+
+<script>
+"use strict";
+var STATE = null;
+try { STATE = JSON.parse(document.getElementById("embedded-state").textContent); } catch(e) {}
+
+var COL = {
+  blue:"#58A6FF", teal:"#39C5CF", green:"#3FB950", amber:"#D29922",
+  red:"#F85149", purple:"#BC8CFF", dim:"#7A8499", mut:"#55607A",
+  txt:"#C9D1D9", bg:"#0F131C", hair:"#1B2230"
+};
+
+function fmtDH(v){ return v==null ? "--" : v.toFixed(1) + "%"; }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function renderHeader(){
+  var h = STATE.header;
+  document.getElementById("hd-subjects").textContent = h.subjects;
+  document.getElementById("hd-dep").textContent = h.deployments_done + "/" + h.deployments_total;
+  document.getElementById("hd-rebel").textContent = h.purged;
+  document.getElementById("hd-best").textContent = fmtDH(h.best_observed_dh);
+  document.getElementById("hd-rounds").textContent = h.rounds_completed;
+  var live = STATE.regime === "live";
+  var chip = document.getElementById("hd-chip");
+  chip.textContent = live ? "LIVE SIMULATION REGIME" : "SNAPSHOT · OFFLINE";
+  chip.className = "regime" + (live ? "" : " snap");
+  document.getElementById("hd-dot").style.background = live ? "#3FB950" : "#55607A";
+  document.getElementById("hd-regime").textContent = chip.textContent;
+  document.getElementById("hd-dot").classList.toggle("pulse", live);
+}
+
+function renderClock(){
+  var d = new Date();
+  document.getElementById("hd-clock").textContent =
+    d.toISOString().substr(11,8) + " UTC";
+}
+
+/* ---------------- landscape ---------------- */
+function heatColor(v, lo, hi){
+  var t = hi === lo ? 0.5 : Math.max(0, Math.min(1, (v - lo) / (hi - lo)));
+  var r = Math.round(12 + 58 * t), g = Math.round(32 + 150 * t), b = Math.round(74 + 110 * t);
+  return "rgb(" + r + "," + g + "," + b + ")";
+}
+function renderLandscape(){
+  var c = document.getElementById("landscape");
+  var dpr = window.devicePixelRatio || 1;
+  var W = c.clientWidth, H = c.clientHeight;
+  c.width = W * dpr; c.height = H * dpr;
+  var x = c.getContext("2d");
+  x.scale(dpr, dpr);
+  x.clearRect(0, 0, W, H);
+
+  var L = STATE.landscape;
+  var padL = 46, padB = 28, padT = 14, padR = 14;
+  var gw = W - padL - padR, gh = H - padT - padB;
+  var ph = L.ph_axis, tp = L.temp_axis;
+  var z = L.grid, zmin = Infinity, zmax = -Infinity;
+  z.forEach(function(row){ row.forEach(function(v){ if(v < zmin) zmin = v; if(v > zmax) zmax = v; }); });
+
+  z.forEach(function(row, i){
+    row.forEach(function(v, j){
+      x.fillStyle = heatColor(v, zmin, zmax);
+      x.fillRect(padL + gw*i/10, padT + gh*(9-j)/10, gw/10, gh/10);
+    });
+  });
+  x.strokeStyle = "rgba(27,34,48,.8)"; x.lineWidth = 1;
+  x.strokeRect(padL, padT, gw, gh);
+
+  ph.forEach(function(p, i){
+    x.fillStyle = COL.mut; x.font = "10px Consolas,monospace";
+    x.textAlign = "center";
+    x.fillText(p.toFixed(1), padL + gw*(i+0.5)/10, H - 10);
+  });
+  tp.forEach(function(t, i){
+    x.fillStyle = COL.mut; x.font = "10px Consolas,monospace";
+    x.textAlign = "right";
+    x.fillText(t.toFixed(0) + "°C", padL - 8, padT + gh*(9.5-i)/10);
+  });
+  x.fillStyle = COL.mut; x.font = "9px Consolas,monospace"; x.textAlign = "center";
+  x.fillText("pH →", padL + gw/2, H - 4);
+
+  function px(p){ return padL + gw * (p - ph[0]) / (ph[9] - ph[0]); }
+  function py(t){ return padT + gh * (1 - (t - tp[0]) / (tp[9] - tp[0])); }
+
+  L.nodes.forEach(function(n){
+    var cx = px(n.ph), cy = py(n.temp), r;
+    if(n.type === "subject"){
+      r = n.dh >= 40 ? 5 : 4;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.fillStyle = n.dh >= 40 ? COL.green : "rgba(200,210,230,.55)";
+      x.fill();
+      x.strokeStyle = "rgba(10,13,19,.8)"; x.lineWidth = 1; x.stroke();
+    } else if(n.type === "deployment"){
+      r = 4.5;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.strokeStyle = n.status === "complete" ? COL.green : "#E6EBF4";
+      x.lineWidth = 1.4; x.stroke();
+      x.beginPath(); x.arc(cx, cy, 1.6, 0, 7);
+      x.fillStyle = n.status === "complete" ? COL.green : "#E6EBF4"; x.fill();
+    } else {
+      r = 4;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.strokeStyle = COL.teal; x.lineWidth = 1.6; x.stroke();
+      x.beginPath(); x.arc(cx, cy, 8, 0, 7);
+      x.strokeStyle = "rgba(57,197,207,.35)"; x.lineWidth = 1; x.stroke();
+    }
+  });
+
+  var halo = L.halo;
+  var hx = px(halo.ph), hy = py(halo.temp), R = 11;
+  x.beginPath(); x.arc(hx, hy, R, 0, 7);
+  x.strokeStyle = "rgba(210,153,34,.9)"; x.lineWidth = 2; x.stroke();
+  x.beginPath(); x.arc(hx, hy, R + 5, 0, 7);
+  x.strokeStyle = "rgba(210,153,34,.3)"; x.lineWidth = 1; x.stroke();
+  x.fillStyle = COL.amber; x.font = "9px Consolas,monospace"; x.textAlign = "left";
+  x.fillText("▲ TOP-BELIEF", hx + R + 6, hy - 4);
+
+  var cond = L.condition;
+  document.getElementById("ls-cond").textContent =
+    "DUR " + cond.duration + " MIN · SUB " + cond.substrate + " g/L · " + cond.enzyme.toUpperCase();
+
+  var lg = document.getElementById("ls-legend");
+  lg.innerHTML =
+    '<div class="row"><span class="sw" style="background:' + heatColor(zmin, zmin, zmax) + '"></span>LOW</div>' +
+    '<div class="row"><span class="sw" style="background:' + heatColor((zmin+zmax)/2, zmin, zmax) + '"></span>MID</div>' +
+    '<div class="row"><span class="sw" style="background:' + heatColor(zmax, zmin, zmax) + '"></span>HIGH</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;background:rgba(200,210,230,.55)"></span>SUBJECT</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;border:1.4px solid #E6EBF4"></span>DEPLOYMENT</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;border:1.6px solid #39C5CF"></span>SCOUT</div>';
+}
+
+/* ---------------- network ---------------- */
+function renderNetwork(){
+  var svg = document.getElementById("network");
+  document.getElementById("nt-meta").textContent = STATE.network.note || "n = 31 · |r| ≥ 0.20";
+  var ns = svg.viewBox.baseVal.width, hs = svg.viewBox.baseVal.height;
+  var cx = ns/2, cy = hs/2 + 6, R = Math.min(ns, hs)/2 - 52;
+  var nodes = STATE.network.nodes;
+  var pos = {}, i;
+  for(i = 0; i < nodes.length; i++){
+    var a = -Math.PI/2 + 2 * Math.PI * i / nodes.length;
+    pos[nodes[i].id] = {x: cx + R*Math.cos(a), y: cy + R*Math.sin(a)};
+  }
+  var s = "";
+  STATE.network.edges.forEach(function(e){
+    var p1 = pos[e.s], p2 = pos[e.t];
+    var col = e.agree === null ? "#3A4458" : "#3A4458";
+    if(e.agree === true) col = COL.blue;
+    else if(e.agree === false) col = COL.amber;
+    var w = Math.max(1, Math.min(5.5, Math.abs(e.r) * 14));
+    s += '<line x1="' + p1.x + '" y1="' + p1.y + '" x2="' + p2.x + '" y2="' + p2.y +
+      '" stroke="' + col + '" stroke-width="' + w + '" opacity="' + (0.35 + Math.abs(e.r)) + '"/>';
+  });
+  nodes.forEach(function(n){
+    var p = pos[n.id];
+    s += '<circle cx="' + p.x + '" cy="' + p.y + '" r="17" fill="#121724" stroke="#232C3E" stroke-width="1"/>';
+    s += '<text x="' + p.x + '" y="' + (p.y + 3.5) + '" text-anchor="middle" class="net-label" font-size="11">' + n.label + '</text>';
+    s += '<text x="' + p.x + '" y="' + (p.y + 15) + '" text-anchor="middle" class="net-val">' + n.value + '</text>';
+  });
+  s += '<g>' +
+    '<line x1="20" y1="30" x2="36" y2="30" stroke="' + COL.blue + '" stroke-width="2.5"/>' +
+    '<text x="41" y="34" class="net-label" font-size="9" opacity="0.85">MODEL AGREE</text>' +
+    '<line x1="150" y1="30" x2="166" y2="30" stroke="' + COL.amber + '" stroke-width="2.5"/>' +
+    '<text x="171" y="34" class="net-label" font-size="9" opacity="0.85">ODE DIVERGE</text>' +
+    '<line x1="286" y1="30" x2="302" y2="30" stroke="#3A4458" stroke-width="2.5"/>' +
+    '<text x="307" y="34" class="net-label" font-size="9" opacity="0.85">NO MODEL PAIR</text>' +
+    '</g>';
+  svg.innerHTML = s;
+}
+
+/* ---------------- kinetics ---------------- */
+function renderKinetics(){
+  var root = document.getElementById("kinetics");
+  var K = STATE.kinetics;
+  document.getElementById("kt-note").textContent = K.note;
+  var html = "";
+  K.batches.forEach(function(b){
+    var flag = b.flag ? '<span class="flag">▲ flagged</span>' : "";
+    var rmse = b.rmse != null ? 'RMSE ' + b.rmse.toFixed(2) + ' pts' : '—';
+    html += '<div class="krow">' +
+      '<div class="kid">' + b.id + '<span class="enz">' + esc(b.enzyme) + '</span></div>' +
+      '<div class="kcanv"><canvas data-batch="' + b.id + '"></canvas></div>' +
+      '<div class="kstats">DH ' + b.final.toFixed(1) + '%<br>' + rmse + ' ' + flag + '</div>' +
+      '</div>';
+  });
+  root.innerHTML = html;
+  root.querySelectorAll("canvas").forEach(function(cv){
+    var id = cv.getAttribute("data-batch");
+    var b = K.batches.filter(function(k){ return k.id === id; })[0];
+    drawKin(cv, b);
+  });
+}
+function drawKin(cv, b){
+  var dpr = window.devicePixelRatio || 1;
+  var W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr;
+  var x = cv.getContext("2d");
+  x.scale(dpr, dpr);
+  x.clearRect(0, 0, W, H);
+  var ymax = 60;
+  var tmax = 300, tmin = 0;
+  function X(t){ return 2 + (W - 4) * (t - tmin) / (tmax - tmin); }
+  function Y(v){ return H - 4 - (H - 10) * v / ymax; }
+  x.strokeStyle = COL.hair; x.lineWidth = 1;
+  for(var gy = 0; gy <= 60; gy += 20){
+    x.beginPath(); x.moveTo(0, Y(gy)); x.lineTo(W, Y(gy)); x.stroke();
+  }
+  function poly(pts, style, width){
+    x.beginPath();
+    pts.forEach(function(p, i){ i ? x.lineTo(X(p[0]), Y(p[1])) : x.moveTo(X(p[0]), Y(p[1])); });
+    x.strokeStyle = style; x.lineWidth = width; x.stroke();
+  }
+  poly(b.measured, COL.teal, 1.6);
+  if(b.predicted) poly(b.predicted, COL.blue, 1.1);
+  x.setLineDash([]);
+}
+window.addEventListener("resize", function(){
+  renderLandscape(); renderKinetics();
+  try { renderNetwork(); } catch(e) {}
+});
+
+/* ---------------- confidence ---------------- */
+function renderConf(){
+  var root = document.getElementById("conf");
+  var html = "";
+  STATE.confidence.forEach(function(r){
+    var width;
+    if(r.value == null) width = 22;
+    else if(r.model === "ODE FIT") width = Math.round(r.value * 100);
+    else if(r.model === "ORAC RIDGE") width = Math.round(r.value * 100);
+    else width = 60;
+    width = Math.max(6, Math.min(100, width));
+    html += '<div class="crow">' +
+      '<div class="top"><span class="cd ' + r.status + '"></span>' +
+      '<span class="name">' + esc(r.model) + '</span>' +
+      '<span class="met">' + esc(r.metric) + '</span></div>' +
+      '<div class="track"><div class="fill ' + (r.status === "warn" ? "warn" : "blue") +
+      '" style="width:' + width + '%"></div></div>' +
+      '<div class="note">' + esc(r.note) + '</div></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- alerts ---------------- */
+function renderAlerts(){
+  var root = document.getElementById("alerts");
+  document.getElementById("al-count").textContent = STATE.alerts.length + " ENTRIES";
+  var html = "";
+  STATE.alerts.forEach(function(a){
+    html += '<div class="alert">' +
+      '<span class="lvl ' + a.level + '"></span>' +
+      '<span class="src">' + esc(a.source) + '</span>' +
+      '<span class="msg">' + esc(a.msg) + '</span>' +
+      '<span class="ts">' + esc(a.ts).substr(11,8) + '</span></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- roster ---------------- */
+var ARM = {dose_sweep:"arm-dose", process_lhc:"arm-lhc", gap_fill:"arm-gap"};
+function renderRoster(){
+  var root = document.getElementById("roster");
+  var R = STATE.roster, done = 0;
+  R.forEach(function(r){ if(r.status === "complete") done++; });
+  document.getElementById("ro-meta").textContent =
+    done + " / " + R.length + " MEASURED · " +
+    (STATE.header.best_observed_dh === 50 ? "BEST 50.0%" : "BEST " + STATE.header.best_observed_dh + "%");
+  var html = "";
+  R.forEach(function(r){
+    var stat = r.status === "complete" ? "done" : r.status;
+    var dh = r.measured_dh != null
+      ? r.measured_dh.toFixed(1) + "<small>%</small>"
+      : "--<small>%</small>";
+    html += '<div class="rcell ' + (ARM[r.arm] || "") + ' ' + (r.status === "complete" ? "done" : "") + '">' +
+      '<div class="rid">' + esc(r.id) + '</div>' +
+      '<span class="rstat ' + stat + '"></span>' +
+      '<div class="rdh">' + dh + '</div>' +
+      '<div class="rcond">pH ' + r.ph.toFixed(1) + ' · ' + r.temp.toFixed(0) + '°C · ' +
+      Math.round(r.duration) + ' min</div>' +
+      '<div class="rarm">' + esc(r.arm) + ' · ' + esc(r.enzyme) + '</div></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- boot ---------------- */
+function renderAll(){
+  renderHeader(); renderClock(); renderLandscape(); renderNetwork();
+  renderKinetics(); renderConf(); renderAlerts(); renderRoster();
+}
+
+function connectLive(){
+  if(!window.EventSource){
+    setTimeout(pollLive, STATE.tick_ms || 8000);
+    return;
+  }
+  var es = new EventSource("api/stream");
+  es.onmessage = function(ev){
+    try {
+      STATE = JSON.parse(ev.data);
+      STATE.regime = "live";
+      renderAll();
+    } catch(e){}
+  };
+  es.onerror = function(){
+    es.close();
+    STATE.regime = "snapshot";
+    renderHeader();
+    setTimeout(connectLive, 4000);
+  };
+}
+function pollLive(){
+  fetch("api/state").then(function(r){ return r.json(); }).then(function(s){
+    s.regime = "live"; STATE = s; renderAll();
+  }).catch(function(){ setTimeout(pollLive, STATE.tick_ms || 8000); });
+}
+
+var LIVE = !(location.search.indexOf("snap=1") >= 0);
+fetch("api/state", {cache:"no-store"}).then(function(r){
+  if(!r.ok) throw 0;
+  return r.json();
+}).then(function(s){
+  STATE = s; STATE.regime = "live"; renderAll();
+  markBoot("live");
+  if(LIVE){ connectLive(); }
+}).catch(function(){
+  if(STATE){ renderAll(); }
+  markBoot("snapshot");
+});
+function markBoot(mode){
+  document.body.setAttribute("data-boot", mode);
+  document.body.setAttribute("data-dep", STATE.header.deployments_done + "/" + STATE.header.deployments_total);
+  document.body.setAttribute("data-alerts", STATE.alerts.length);
+  document.body.setAttribute("data-roster", STATE.roster.filter(function(r){ return r.status === "complete"; }).length);
+}
+setInterval(renderClock, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+BatchID,Enzyme,pH,Temp_C,Duration_min,SubstrateConc_gL,EnzymeToSubstrateRatio,RawMaterial,arm,note
+CAMPAIGN_001,Pepsin,3.01,35.1,210,50.0,0.02,salmon_frames,gap_fill,raise Pepsin rows to n>=3
+CAMPAIGN_002,Flavourzyme,6.26,52.1,275,50.0,0.02,cod_frames,gap_fill,raise Flavourzyme rows to n>=3
+CAMPAIGN_003,Alcalase+Kojizyme,7.07,57.9,246,50.0,0.02,cod_frames,gap_fill,raise Alcalase+Kojizyme rows to n>=3
+CAMPAIGN_004,Alcalase+Neutrase,7.44,49.8,114,50.0,0.02,salmon_frames,gap_fill,raise Alcalase+Neutrase rows to n>=3
+CAMPAIGN_005,Alcalase+Neutrase,7.7,54.9,132,50.0,0.02,cod_frames,gap_fill,raise Alcalase+Neutrase rows to n>=3
+CAMPAIGN_006,Alcalase+Flavourzyme,7.07,54.6,269,50.0,0.02,salmon_trimmings,gap_fill,raise Alcalase+Flavourzyme rows to n>=3
+CAMPAIGN_007,Alcalase+Flavourzyme,7.59,53.0,61,50.0,0.02,salmon_frames,gap_fill,raise Alcalase+Flavourzyme rows to n>=3
+CAMPAIGN_008,Alcalase,7.29,57.5,179,61.88277715008185,0.02,salmon_frames,process_lhc,process space; material gap salmon_frames
+CAMPAIGN_009,Alcalase,8.36,53.0,257,48.71739811374883,0.02,cod_frames,process_lhc,process space; material gap cod_frames
+CAMPAIGN_010,Alcalase,9.0,59.8,255,41.13702448403093,0.02,salmon_trimmings,process_lhc,process space; material gap salmon_trimmings
+CAMPAIGN_011,Alcalase,7.97,55.6,132,40.19478350616498,0.02,cod_heads,process_lhc,process space; material gap cod_heads
+CAMPAIGN_012,Alcalase,7.47,51.6,297,50.181930358318134,0.02,herring_byproduct,process_lhc,process space; material gap herring_byproduct
+CAMPAIGN_013,Alcalase,8.05,57.0,120,50.0,0.01,salmon_frames,dose_sweep,weighed enzyme charge E/S=0.01; restores dose identifiability
+CAMPAIGN_014,Alcalase,8.29,55.5,120,50.0,0.04,salmon_frames,dose_sweep,weighed enzyme charge E/S=0.04; restores dose identifiability
+CAMPAIGN_015,Alcalase,8.49,53.9,120,50.0,0.06,salmon_frames,dose_sweep,weighed enzyme charge E/S=0.06; restores dose identifiability

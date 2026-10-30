@@ -1,0 +1,68 @@
+{
+  "substrate_inhibition": {
+    "s0": [
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0
+    ],
+    "dh": [
+      32.27,
+      33.34,
+      33.39,
+      32.87,
+      32.03
+    ],
+    "argmax_s0": 50.0,
+    "interior": true,
+    "span_dh": 1.37
+  },
+  "temperature_shift": {
+    "T": [
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0
+    ],
+    "argmax_T_60min": 60.0,
+    "argmax_T_300min": 55.0,
+    "shifts_down": true
+  },
+  "lot_effect": {
+    "dh_low_lot": 30.45,
+    "dh_high_lot": 35.98,
+    "relative_gap": 0.182,
+    "detectable": true
+  },
+  "orac_non_monotonic": {
+    "dh": [
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0
+    ],
+    "orac": [
+      332.0,
+      372.9,
+      419.5,
+      450.9,
+      449.3,
+      415.8,
+      369.6,
+      330.7,
+      307.5
+    ],
+    "argmax_dh": 20.0,
+    "interior": true,
+    "span": 143.4
+  },
+  "gross_error_fraction": 0.04,
+  "gross_error_nominal": 0.05
+}

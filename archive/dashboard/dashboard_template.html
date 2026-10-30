@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROTEIN-7 // DIGITAL TWIN OPERATIONS</title>
+<script id="embedded-state" type="application/json">__STATE_JSON__</script>
+<style>
+:root{
+  --bg:#0A0D13; --panel:#0F131C; --panel2:#121724; --hair:#1B2230; --edge:#232C3E;
+  --txt:#C9D1D9; --dim:#7A8499; --mut:#55607A;
+  --blue:#58A6FF; --teal:#39C5CF; --green:#3FB950; --amber:#D29922; --red:#F85149; --purple:#BC8CFF;
+  --mono:"Cascadia Mono","SF Mono",Consolas,monospace;
+  --sans:-apple-system,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:13px}
+body{min-width:1280px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.blink{animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(63,185,80,.45)}50%{box-shadow:0 0 0 7px rgba(63,185,80,0)}}
+
+/* ---------- header ---------- */
+header{display:flex;align-items:flex-end;justify-content:space-between;height:76px;padding:0 28px;
+  border-bottom:1px solid var(--edge);background:linear-gradient(180deg,#0D1120 0%,var(--bg) 100%)}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .sigil{width:34px;height:34px;border:1px solid var(--blue);position:relative;
+  background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(88,166,255,.08) 6px 7px)}
+.brand .sigil::before{content:"";position:absolute;inset:6px;border:1px solid rgba(88,166,255,.5)}
+.brand h1{font-size:17px;letter-spacing:.14em;font-weight:600;color:#E6EBF4}
+.brand h1 em{font-style:normal;color:var(--blue)}
+.brand .sub{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;margin-top:4px}
+.clock{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.05em}
+.chips{display:flex;align-items:center;gap:10px}
+.chip{display:flex;align-items:baseline;gap:8px;padding:6px 12px;border:1px solid var(--hair);
+  background:var(--panel);min-width:118px}
+.chip .k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--dim)}
+.chip .v{font-size:15px;font-weight:600;color:#E6EBF4}
+.chip .v.acc{color:var(--blue)} .chip .v.warn{color:var(--amber)} .chip .v.reb{color:var(--red)}
+.chip .dot{width:7px;height:7px;border-radius:50%;align-self:center}
+.dot.green{background:var(--green)} .dot.amber{background:var(--amber)} .dot.red{background:var(--red)} .dot.blue{background:var(--blue)}
+.regime{padding:7px 14px;border:1px solid var(--blue);color:var(--blue);font-family:var(--mono);
+  font-size:10px;letter-spacing:.16em;background:rgba(88,166,255,.06);white-space:nowrap}
+.regime.snap{border-color:var(--dim);color:var(--dim);background:transparent}
+
+/* ---------- shell ---------- */
+main{padding:18px 22px 8px;display:grid;gap:14px}
+.grid1{display:grid;grid-template-columns:7fr 5fr;gap:14px}
+.grid2{display:grid;grid-template-columns:4fr 3fr 5fr;gap:14px}
+.panel{background:var(--panel);border:1px solid var(--hair);position:relative;min-height:0}
+.panel::before,.panel::after{content:"";position:absolute;width:9px;height:9px;pointer-events:none}
+.panel::before{top:-1px;left:-1px;border-top:1px solid var(--blue);border-left:1px solid var(--blue)}
+.panel::after{bottom:-1px;right:-1px;border-bottom:1px solid var(--blue);border-right:1px solid var(--blue)}
+.phead{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;border-bottom:1px solid var(--hair)}
+.phead h2{font-size:10px;letter-spacing:.18em;color:var(--dim);font-weight:600}
+.phead h2 b{color:#E6EBF4;font-weight:600}
+.phead .led{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal)}
+.phead .meta{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--mut);letter-spacing:.1em}
+.pbody{position:relative;height:340px}
+.pbody.tall{height:396px}
+
+/* ---------- landscape ---------- */
+#landscape{position:absolute;inset:0;width:100%;height:100%;display:block;background:var(--panel)}
+.scan{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.scan::after{content:"";position:absolute;left:-20%;right:-20%;height:60px;top:-80px;
+  background:linear-gradient(180deg,transparent,rgba(88,166,255,.05),transparent);
+  animation:sweep 9s linear infinite}
+@keyframes sweep{0%{top:-90px}100%{top:110%}}
+.legend{position:absolute;right:14px;bottom:12px;display:flex;flex-direction:column;gap:5px;
+  font-family:var(--mono);font-size:9px;color:var(--dim);z-index:2}
+.legend .row{display:flex;align-items:center;gap:7px}
+.legend .sw{width:20px;height:7px}
+.footnote{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;
+  color:var(--mut);letter-spacing:.06em;z-index:2}
+
+/* ---------- network ---------- */
+#network{position:absolute;inset:0;width:100%;height:100%}
+.net-label{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--dim)}
+.net-val{font-family:var(--mono);font-size:10px;fill:var(--blue)}
+
+/* ---------- kinetics ---------- */
+#kinetics{position:absolute;inset:0;overflow-y:auto;padding:10px 14px}
+.krow{display:grid;grid-template-columns:96px 1fr 118px;gap:10px;align-items:center;
+  padding:7px 0;border-bottom:1px solid rgba(27,34,48,.55)}
+.krow:last-child{border-bottom:none}
+.kid{font-family:var(--mono);font-size:11px;color:#E6EBF4}
+.kid .enz{display:block;font-size:8.5px;color:var(--mut);letter-spacing:.06em;margin-top:2px}
+.kcanv{height:56px;position:relative}
+.kcanv canvas{position:absolute;inset:0;width:100%;height:100%}
+.kstats{font-family:var(--mono);font-size:10px;color:var(--dim);line-height:1.5}
+.kstats .flag{color:var(--amber)} .kstats .ok{color:var(--blue)}
+
+/* ---------- confidence ---------- */
+#conf{position:absolute;inset:0;overflow-y:auto;padding:12px 16px}
+.crow{margin-bottom:18px}
+.crow .top{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.crow .cd{width:6px;height:6px;border-radius:50%;align-self:center}
+.cd.ok{background:var(--blue);box-shadow:0 0 5px var(--blue)} .cd.warn{background:var(--amber);box-shadow:0 0 5px var(--amber)}
+.crow .name{font-size:11px;font-weight:600;color:#E6EBF4;letter-spacing:.05em}
+.crow .met{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--dim)}
+.track{height:7px;background:#0A0E17;border:1px solid var(--hair);position:relative}
+.track .fill{position:absolute;inset:0;transform-origin:left}
+.fill.blue{background:linear-gradient(90deg,rgba(88,166,255,.25),var(--blue))}
+.fill.warn{background:linear-gradient(90deg,rgba(210,153,34,.25),var(--amber))}
+.crow .note{margin-top:5px;font-family:var(--mono);font-size:9px;color:var(--mut);letter-spacing:.04em}
+
+/* ---------- alerts ---------- */
+#alerts{position:absolute;inset:0;overflow-y:auto;padding:8px 14px}
+.alert{display:grid;grid-template-columns:10px 66px 1fr auto;gap:10px;align-items:baseline;
+  padding:8px 0;border-bottom:1px solid rgba(27,34,48,.55)}
+.alert:last-child{border-bottom:none}
+.alert .lvl{width:6px;height:6px;border-radius:50%;align-self:center}
+.lvl.crit{background:var(--red);box-shadow:0 0 6px var(--red)}
+.lvl.warn{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.lvl.info{background:var(--green);box-shadow:0 0 6px rgba(63,185,80,.5)}
+.alert .src{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--dim)}
+.alert .msg{font-size:12px;color:var(--txt);line-height:1.35}
+.alert .ts{font-family:var(--mono);font-size:9px;color:var(--mut)}
+
+/* ---------- roster strip ---------- */
+footer{border-top:1px solid var(--edge);margin-top:2px;padding:12px 22px 20px}
+.foot-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.foot-head h2{font-size:10px;letter-spacing:.18em;color:var(--dim);font-weight:600}
+.foot-head .meta{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--mut)}
+.roster{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.rcell{background:var(--panel2);border:1px solid var(--hair);border-left:3px solid var(--hair);
+  padding:7px 9px;position:relative}
+.rcell.arm-dose{border-left-color:var(--blue)}
+.rcell.arm-lhc{border-left-color:var(--teal)}
+.rcell.arm-gap{border-left-color:var(--purple)}
+.rcell.done{opacity:.85}
+.rcell .rid{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.06em}
+.rcell .rstat{position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%}
+.rstat.pend{background:var(--mut)} .rstat.run{background:var(--amber);animation:blink 1s infinite}
+.rstat.done{background:var(--green)}
+.rcell .rdh{font-family:var(--mono);font-size:15px;font-weight:600;margin-top:3px;color:#E6EBF4}
+.rcell .rdh small{font-size:9px;color:var(--mut);font-weight:400}
+.rcell .rcond{font-family:var(--mono);font-size:8.5px;color:var(--mut);margin-top:3px}
+.rcell .rarm{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--dim);margin-top:2px}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:#232C3E} ::-webkit-scrollbar-track{background:transparent}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="sigil"></div>
+    <div>
+      <h1>PROTEIN-7 <em>DIGITAL TWIN</em> // OPERATIONS</h1>
+      <div class="sub">ENZYMATIC HYDROLYSIS · ENERGY-BASED OPTIMISATION · <span id="hd-regime">UNKNOWN</span></div>
+    </div>
+  </div>
+  <div class="chips">
+    <div class="chip"><span class="dot green pulse" id="hd-dot"></span><span class="k">SUBJECTS SYNCED</span><span class="v" id="hd-subjects">--</span></div>
+    <div class="chip"><span class="k">DEPLOYMENTS</span><span class="v" id="hd-dep">--/--</span></div>
+    <div class="chip"><span class="k">REBEL CELLS</span><span class="v reb" id="hd-rebel">--</span></div>
+    <div class="chip"><span class="k">BEST OBSERVED</span><span class="v acc" id="hd-best">--</span></div>
+    <div class="chip"><span class="k">ROUNDS</span><span class="v" id="hd-rounds">--</span></div>
+    <div class="regime" id="hd-chip">SNAPSHOT</div>
+    <div class="clock" id="hd-clock">--:--:-- UTC</div>
+  </div>
+</header>
+
+<main>
+  <div class="grid1">
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>ACQUISITION LANDSCAPE — <b>EXPECTED DH</b> UNDER ENERGYNET</h2>
+        <span class="meta" id="ls-cond">CONDITIONING…</span></div>
+      <div class="pbody tall">
+        <canvas id="landscape"></canvas>
+        <div class="scan"></div>
+        <div class="footnote" id="ls-note">MODEL BELIEF SURFACE — NOT MEASURED DATA</div>
+        <div class="legend" id="ls-legend"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>VARIABLE CORRELATION — <b>DATA VS ODE SENSITIVITY</b></h2>
+        <span class="meta" id="nt-meta">n = 31 · |r| ≥ 0.20</span></div>
+      <div class="pbody">
+        <svg id="network" viewBox="0 0 480 340" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid2">
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>HYDROLYSIS KINETICS — <b>TIME-COURSE</b></h2>
+        <span class="meta" id="kt-note">MEASURED / ODE PREDICTED</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="kinetics"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>MODEL CONFIDENCE</h2>
+        <span class="meta">PER-SOURCE</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="conf"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead"><span class="led"></span><h2>ALERT QUEUE</h2>
+        <span class="meta" id="al-count">0 ENTRIES</span></div>
+      <div class="pbody" style="height:300px">
+        <div id="alerts"></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-head"><h2>DEPLOYMENT ROSTER — CAMPAIGN-1</h2>
+    <span class="meta" id="ro-meta">--</span></div>
+  <div class="roster" id="roster"></div>
+</footer>
+
+<script>
+"use strict";
+var STATE = null;
+try { STATE = JSON.parse(document.getElementById("embedded-state").textContent); } catch(e) {}
+
+var COL = {
+  blue:"#58A6FF", teal:"#39C5CF", green:"#3FB950", amber:"#D29922",
+  red:"#F85149", purple:"#BC8CFF", dim:"#7A8499", mut:"#55607A",
+  txt:"#C9D1D9", bg:"#0F131C", hair:"#1B2230"
+};
+
+function fmtDH(v){ return v==null ? "--" : v.toFixed(1) + "%"; }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function renderHeader(){
+  var h = STATE.header;
+  document.getElementById("hd-subjects").textContent = h.subjects;
+  document.getElementById("hd-dep").textContent = h.deployments_done + "/" + h.deployments_total;
+  document.getElementById("hd-rebel").textContent = h.purged;
+  document.getElementById("hd-best").textContent = fmtDH(h.best_observed_dh);
+  document.getElementById("hd-rounds").textContent = h.rounds_completed;
+  var live = STATE.regime === "live";
+  var chip = document.getElementById("hd-chip");
+  chip.textContent = live ? "LIVE SIMULATION REGIME" : "SNAPSHOT · OFFLINE";
+  chip.className = "regime" + (live ? "" : " snap");
+  document.getElementById("hd-dot").style.background = live ? "#3FB950" : "#55607A";
+  document.getElementById("hd-regime").textContent = chip.textContent;
+  document.getElementById("hd-dot").classList.toggle("pulse", live);
+}
+
+function renderClock(){
+  var d = new Date();
+  document.getElementById("hd-clock").textContent =
+    d.toISOString().substr(11,8) + " UTC";
+}
+
+/* ---------------- landscape ---------------- */
+function heatColor(v, lo, hi){
+  var t = hi === lo ? 0.5 : Math.max(0, Math.min(1, (v - lo) / (hi - lo)));
+  var r = Math.round(12 + 58 * t), g = Math.round(32 + 150 * t), b = Math.round(74 + 110 * t);
+  return "rgb(" + r + "," + g + "," + b + ")";
+}
+function renderLandscape(){
+  var c = document.getElementById("landscape");
+  var dpr = window.devicePixelRatio || 1;
+  var W = c.clientWidth, H = c.clientHeight;
+  c.width = W * dpr; c.height = H * dpr;
+  var x = c.getContext("2d");
+  x.scale(dpr, dpr);
+  x.clearRect(0, 0, W, H);
+
+  var L = STATE.landscape;
+  var padL = 46, padB = 28, padT = 14, padR = 14;
+  var gw = W - padL - padR, gh = H - padT - padB;
+  var ph = L.ph_axis, tp = L.temp_axis;
+  var z = L.grid, zmin = Infinity, zmax = -Infinity;
+  z.forEach(function(row){ row.forEach(function(v){ if(v < zmin) zmin = v; if(v > zmax) zmax = v; }); });
+
+  z.forEach(function(row, i){
+    row.forEach(function(v, j){
+      x.fillStyle = heatColor(v, zmin, zmax);
+      x.fillRect(padL + gw*i/10, padT + gh*(9-j)/10, gw/10, gh/10);
+    });
+  });
+  x.strokeStyle = "rgba(27,34,48,.8)"; x.lineWidth = 1;
+  x.strokeRect(padL, padT, gw, gh);
+
+  ph.forEach(function(p, i){
+    x.fillStyle = COL.mut; x.font = "10px Consolas,monospace";
+    x.textAlign = "center";
+    x.fillText(p.toFixed(1), padL + gw*(i+0.5)/10, H - 10);
+  });
+  tp.forEach(function(t, i){
+    x.fillStyle = COL.mut; x.font = "10px Consolas,monospace";
+    x.textAlign = "right";
+    x.fillText(t.toFixed(0) + "°C", padL - 8, padT + gh*(9.5-i)/10);
+  });
+  x.fillStyle = COL.mut; x.font = "9px Consolas,monospace"; x.textAlign = "center";
+  x.fillText("pH →", padL + gw/2, H - 4);
+
+  function px(p){ return padL + gw * (p - ph[0]) / (ph[9] - ph[0]); }
+  function py(t){ return padT + gh * (1 - (t - tp[0]) / (tp[9] - tp[0])); }
+
+  L.nodes.forEach(function(n){
+    var cx = px(n.ph), cy = py(n.temp), r;
+    if(n.type === "subject"){
+      r = n.dh >= 40 ? 5 : 4;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.fillStyle = n.dh >= 40 ? COL.green : "rgba(200,210,230,.55)";
+      x.fill();
+      x.strokeStyle = "rgba(10,13,19,.8)"; x.lineWidth = 1; x.stroke();
+    } else if(n.type === "deployment"){
+      r = 4.5;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.strokeStyle = n.status === "complete" ? COL.green : "#E6EBF4";
+      x.lineWidth = 1.4; x.stroke();
+      x.beginPath(); x.arc(cx, cy, 1.6, 0, 7);
+      x.fillStyle = n.status === "complete" ? COL.green : "#E6EBF4"; x.fill();
+    } else {
+      r = 4;
+      x.beginPath(); x.arc(cx, cy, r, 0, 7);
+      x.strokeStyle = COL.teal; x.lineWidth = 1.6; x.stroke();
+      x.beginPath(); x.arc(cx, cy, 8, 0, 7);
+      x.strokeStyle = "rgba(57,197,207,.35)"; x.lineWidth = 1; x.stroke();
+    }
+  });
+
+  var halo = L.halo;
+  var hx = px(halo.ph), hy = py(halo.temp), R = 11;
+  x.beginPath(); x.arc(hx, hy, R, 0, 7);
+  x.strokeStyle = "rgba(210,153,34,.9)"; x.lineWidth = 2; x.stroke();
+  x.beginPath(); x.arc(hx, hy, R + 5, 0, 7);
+  x.strokeStyle = "rgba(210,153,34,.3)"; x.lineWidth = 1; x.stroke();
+  x.fillStyle = COL.amber; x.font = "9px Consolas,monospace"; x.textAlign = "left";
+  x.fillText("▲ TOP-BELIEF", hx + R + 6, hy - 4);
+
+  var cond = L.condition;
+  document.getElementById("ls-cond").textContent =
+    "DUR " + cond.duration + " MIN · SUB " + cond.substrate + " g/L · " + cond.enzyme.toUpperCase();
+
+  var lg = document.getElementById("ls-legend");
+  lg.innerHTML =
+    '<div class="row"><span class="sw" style="background:' + heatColor(zmin, zmin, zmax) + '"></span>LOW</div>' +
+    '<div class="row"><span class="sw" style="background:' + heatColor((zmin+zmax)/2, zmin, zmax) + '"></span>MID</div>' +
+    '<div class="row"><span class="sw" style="background:' + heatColor(zmax, zmin, zmax) + '"></span>HIGH</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;background:rgba(200,210,230,.55)"></span>SUBJECT</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;border:1.4px solid #E6EBF4"></span>DEPLOYMENT</div>' +
+    '<div class="row"><span style="width:8px;height:8px;border-radius:50%;border:1.6px solid #39C5CF"></span>SCOUT</div>';
+}
+
+/* ---------------- network ---------------- */
+function renderNetwork(){
+  var svg = document.getElementById("network");
+  document.getElementById("nt-meta").textContent = STATE.network.note || "n = 31 · |r| ≥ 0.20";
+  var ns = svg.viewBox.baseVal.width, hs = svg.viewBox.baseVal.height;
+  var cx = ns/2, cy = hs/2 + 6, R = Math.min(ns, hs)/2 - 52;
+  var nodes = STATE.network.nodes;
+  var pos = {}, i;
+  for(i = 0; i < nodes.length; i++){
+    var a = -Math.PI/2 + 2 * Math.PI * i / nodes.length;
+    pos[nodes[i].id] = {x: cx + R*Math.cos(a), y: cy + R*Math.sin(a)};
+  }
+  var s = "";
+  STATE.network.edges.forEach(function(e){
+    var p1 = pos[e.s], p2 = pos[e.t];
+    var col = e.agree === null ? "#3A4458" : "#3A4458";
+    if(e.agree === true) col = COL.blue;
+    else if(e.agree === false) col = COL.amber;
+    var w = Math.max(1, Math.min(5.5, Math.abs(e.r) * 14));
+    s += '<line x1="' + p1.x + '" y1="' + p1.y + '" x2="' + p2.x + '" y2="' + p2.y +
+      '" stroke="' + col + '" stroke-width="' + w + '" opacity="' + (0.35 + Math.abs(e.r)) + '"/>';
+  });
+  nodes.forEach(function(n){
+    var p = pos[n.id];
+    s += '<circle cx="' + p.x + '" cy="' + p.y + '" r="17" fill="#121724" stroke="#232C3E" stroke-width="1"/>';
+    s += '<text x="' + p.x + '" y="' + (p.y + 3.5) + '" text-anchor="middle" class="net-label" font-size="11">' + n.label + '</text>';
+    s += '<text x="' + p.x + '" y="' + (p.y + 15) + '" text-anchor="middle" class="net-val">' + n.value + '</text>';
+  });
+  s += '<g>' +
+    '<line x1="20" y1="30" x2="36" y2="30" stroke="' + COL.blue + '" stroke-width="2.5"/>' +
+    '<text x="41" y="34" class="net-label" font-size="9" opacity="0.85">MODEL AGREE</text>' +
+    '<line x1="150" y1="30" x2="166" y2="30" stroke="' + COL.amber + '" stroke-width="2.5"/>' +
+    '<text x="171" y="34" class="net-label" font-size="9" opacity="0.85">ODE DIVERGE</text>' +
+    '<line x1="286" y1="30" x2="302" y2="30" stroke="#3A4458" stroke-width="2.5"/>' +
+    '<text x="307" y="34" class="net-label" font-size="9" opacity="0.85">NO MODEL PAIR</text>' +
+    '</g>';
+  svg.innerHTML = s;
+}
+
+/* ---------------- kinetics ---------------- */
+function renderKinetics(){
+  var root = document.getElementById("kinetics");
+  var K = STATE.kinetics;
+  document.getElementById("kt-note").textContent = K.note;
+  var html = "";
+  K.batches.forEach(function(b){
+    var flag = b.flag ? '<span class="flag">▲ flagged</span>' : "";
+    var rmse = b.rmse != null ? 'RMSE ' + b.rmse.toFixed(2) + ' pts' : '—';
+    html += '<div class="krow">' +
+      '<div class="kid">' + b.id + '<span class="enz">' + esc(b.enzyme) + '</span></div>' +
+      '<div class="kcanv"><canvas data-batch="' + b.id + '"></canvas></div>' +
+      '<div class="kstats">DH ' + b.final.toFixed(1) + '%<br>' + rmse + ' ' + flag + '</div>' +
+      '</div>';
+  });
+  root.innerHTML = html;
+  root.querySelectorAll("canvas").forEach(function(cv){
+    var id = cv.getAttribute("data-batch");
+    var b = K.batches.filter(function(k){ return k.id === id; })[0];
+    drawKin(cv, b);
+  });
+}
+function drawKin(cv, b){
+  var dpr = window.devicePixelRatio || 1;
+  var W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr;
+  var x = cv.getContext("2d");
+  x.scale(dpr, dpr);
+  x.clearRect(0, 0, W, H);
+  var ymax = 60;
+  var tmax = 300, tmin = 0;
+  function X(t){ return 2 + (W - 4) * (t - tmin) / (tmax - tmin); }
+  function Y(v){ return H - 4 - (H - 10) * v / ymax; }
+  x.strokeStyle = COL.hair; x.lineWidth = 1;
+  for(var gy = 0; gy <= 60; gy += 20){
+    x.beginPath(); x.moveTo(0, Y(gy)); x.lineTo(W, Y(gy)); x.stroke();
+  }
+  function poly(pts, style, width){
+    x.beginPath();
+    pts.forEach(function(p, i){ i ? x.lineTo(X(p[0]), Y(p[1])) : x.moveTo(X(p[0]), Y(p[1])); });
+    x.strokeStyle = style; x.lineWidth = width; x.stroke();
+  }
+  poly(b.measured, COL.teal, 1.6);
+  if(b.predicted) poly(b.predicted, COL.blue, 1.1);
+  x.setLineDash([]);
+}
+window.addEventListener("resize", function(){
+  renderLandscape(); renderKinetics();
+  try { renderNetwork(); } catch(e) {}
+});
+
+/* ---------------- confidence ---------------- */
+function renderConf(){
+  var root = document.getElementById("conf");
+  var html = "";
+  STATE.confidence.forEach(function(r){
+    var width;
+    if(r.value == null) width = 22;
+    else if(r.model === "ODE FIT") width = Math.round(r.value * 100);
+    else if(r.model === "ORAC RIDGE") width = Math.round(r.value * 100);
+    else width = 60;
+    width = Math.max(6, Math.min(100, width));
+    html += '<div class="crow">' +
+      '<div class="top"><span class="cd ' + r.status + '"></span>' +
+      '<span class="name">' + esc(r.model) + '</span>' +
+      '<span class="met">' + esc(r.metric) + '</span></div>' +
+      '<div class="track"><div class="fill ' + (r.status === "warn" ? "warn" : "blue") +
+      '" style="width:' + width + '%"></div></div>' +
+      '<div class="note">' + esc(r.note) + '</div></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- alerts ---------------- */
+function renderAlerts(){
+  var root = document.getElementById("alerts");
+  document.getElementById("al-count").textContent = STATE.alerts.length + " ENTRIES";
+  var html = "";
+  STATE.alerts.forEach(function(a){
+    html += '<div class="alert">' +
+      '<span class="lvl ' + a.level + '"></span>' +
+      '<span class="src">' + esc(a.source) + '</span>' +
+      '<span class="msg">' + esc(a.msg) + '</span>' +
+      '<span class="ts">' + esc(a.ts).substr(11,8) + '</span></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- roster ---------------- */
+var ARM = {dose_sweep:"arm-dose", process_lhc:"arm-lhc", gap_fill:"arm-gap"};
+function renderRoster(){
+  var root = document.getElementById("roster");
+  var R = STATE.roster, done = 0;
+  R.forEach(function(r){ if(r.status === "complete") done++; });
+  document.getElementById("ro-meta").textContent =
+    done + " / " + R.length + " MEASURED · " +
+    (STATE.header.best_observed_dh === 50 ? "BEST 50.0%" : "BEST " + STATE.header.best_observed_dh + "%");
+  var html = "";
+  R.forEach(function(r){
+    var stat = r.status === "complete" ? "done" : r.status;
+    var dh = r.measured_dh != null
+      ? r.measured_dh.toFixed(1) + "<small>%</small>"
+      : "--<small>%</small>";
+    html += '<div class="rcell ' + (ARM[r.arm] || "") + ' ' + (r.status === "complete" ? "done" : "") + '">' +
+      '<div class="rid">' + esc(r.id) + '</div>' +
+      '<span class="rstat ' + stat + '"></span>' +
+      '<div class="rdh">' + dh + '</div>' +
+      '<div class="rcond">pH ' + r.ph.toFixed(1) + ' · ' + r.temp.toFixed(0) + '°C · ' +
+      Math.round(r.duration) + ' min</div>' +
+      '<div class="rarm">' + esc(r.arm) + ' · ' + esc(r.enzyme) + '</div></div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ---------------- boot ---------------- */
+function renderAll(){
+  renderHeader(); renderClock(); renderLandscape(); renderNetwork();
+  renderKinetics(); renderConf(); renderAlerts(); renderRoster();
+}
+
+function connectLive(){
+  if(!window.EventSource){
+    setTimeout(pollLive, STATE.tick_ms || 8000);
+    return;
+  }
+  var es = new EventSource("api/stream");
+  es.onmessage = function(ev){
+    try {
+      STATE = JSON.parse(ev.data);
+      STATE.regime = "live";
+      renderAll();
+    } catch(e){}
+  };
+  es.onerror = function(){
+    es.close();
+    STATE.regime = "snapshot";
+    renderHeader();
+    setTimeout(connectLive, 4000);
+  };
+}
+function pollLive(){
+  fetch("api/state").then(function(r){ return r.json(); }).then(function(s){
+    s.regime = "live"; STATE = s; renderAll();
+  }).catch(function(){ setTimeout(pollLive, STATE.tick_ms || 8000); });
+}
+
+var LIVE = !(location.search.indexOf("snap=1") >= 0);
+fetch("api/state", {cache:"no-store"}).then(function(r){
+  if(!r.ok) throw 0;
+  return r.json();
+}).then(function(s){
+  STATE = s; STATE.regime = "live"; renderAll();
+  markBoot("live");
+  if(LIVE){ connectLive(); }
+}).catch(function(){
+  if(STATE){ renderAll(); }
+  markBoot("snapshot");
+});
+function markBoot(mode){
+  document.body.setAttribute("data-boot", mode);
+  document.body.setAttribute("data-dep", STATE.header.deployments_done + "/" + STATE.header.deployments_total);
+  document.body.setAttribute("data-alerts", STATE.alerts.length);
+  document.body.setAttribute("data-roster", STATE.roster.filter(function(r){ return r.status === "complete"; }).length);
+}
+setInterval(renderClock, 1000);
+</script>
+</body>
+</html>

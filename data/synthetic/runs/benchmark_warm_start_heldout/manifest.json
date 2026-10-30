@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "prefix": "benchmark_warm_start_heldout",
+  "created": "2026-10-30T11:43:53",
+  "updated": "2026-10-30T11:45:08",
+  "git_commit": "ae3c9c2",
+  "code_hash": "aaaa8e1e03dc5cae",
+  "config_hash": "76e77b76994bc22b",
+  "config": {
+    "budget": 30,
+    "batch": 3,
+    "seed": 20261029,
+    "epochs": 250,
+    "n_aug": 6,
+    "n_cand": 150,
+    "langevin_steps": 120,
+    "chains": 4,
+    "ei_chunk": 64,
+    "oracle_candidates": 50000,
+    "policies": [
+      "twin_current",
+      "twin_explore",
+      "random",
+      "lhc",
+      "ofat",
+      "grid",
+      "oracle"
+    ],
+    "save_histories": true,
+    "split_at": 100,
+    "history_rows": 31,
+    "schema": 1,
+    "model": "two_pool_exposure_v1",
+    "code_hash": "aaaa8e1e03dc5cae"
+  },
+  "model": "two_pool_exposure_v1",
+  "worlds_requested": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "worlds_completed": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "worlds_failed": {},
+  "status": "complete"
+}

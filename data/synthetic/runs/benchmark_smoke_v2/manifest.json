@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "prefix": "benchmark_smoke_v2",
+  "created": "2026-10-30T10:08:40",
+  "updated": "2026-10-30T10:08:43",
+  "git_commit": "45aecae",
+  "code_hash": "93b098a3d507bf8f",
+  "config_hash": "5834dbb33b0cfb04",
+  "config": {
+    "budget": 18,
+    "batch": 3,
+    "seed": 20261029,
+    "epochs": 80,
+    "n_aug": 4,
+    "n_cand": 40,
+    "langevin_steps": 40,
+    "chains": 2,
+    "ei_chunk": 32,
+    "oracle_candidates": 2000,
+    "policies": [
+      "twin_current",
+      "random",
+      "lhc",
+      "ofat",
+      "grid",
+      "oracle"
+    ],
+    "save_histories": true,
+    "split_at": 100,
+    "schema": 1,
+    "model": "two_pool_exposure_v1",
+    "code_hash": "93b098a3d507bf8f"
+  },
+  "model": "two_pool_exposure_v1",
+  "worlds_requested": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "worlds_completed": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "worlds_failed": {},
+  "status": "complete"
+}

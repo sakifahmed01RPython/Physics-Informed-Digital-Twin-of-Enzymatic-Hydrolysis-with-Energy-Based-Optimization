@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "prefix": "benchmark_timing",
+  "created": "2026-10-30T10:29:57",
+  "updated": "2026-10-30T10:30:07",
+  "git_commit": "45aecae",
+  "code_hash": "191860fe6c50c49b",
+  "config_hash": "21f09c4ad3469387",
+  "config": {
+    "budget": 30,
+    "batch": 3,
+    "seed": 20261029,
+    "epochs": 250,
+    "n_aug": 6,
+    "n_cand": 150,
+    "langevin_steps": 120,
+    "chains": 4,
+    "ei_chunk": 64,
+    "oracle_candidates": 50000,
+    "policies": [
+      "twin_explore",
+      "random",
+      "lhc",
+      "ofat",
+      "grid",
+      "oracle"
+    ],
+    "save_histories": true,
+    "split_at": 100,
+    "schema": 1,
+    "model": "two_pool_exposure_v1",
+    "code_hash": "191860fe6c50c49b"
+  },
+  "model": "two_pool_exposure_v1",
+  "worlds_requested": [
+    100,
+    101
+  ],
+  "worlds_completed": [
+    100,
+    101
+  ],
+  "worlds_failed": {},
+  "status": "complete"
+}
